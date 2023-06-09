@@ -8,11 +8,13 @@ import { Link } from "react-router-dom";
 const Login = () => {
     const [isPasswordHidden, setIsPasswordHidden] = useState(true);
 
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    
     const onSubmit = data => console.log(data);
+
     return (
         <div className="bg-green-50">
-            <div className="max-w-4xl mx-auto py-24">
+            <div className="max-w-5xl mx-auto py-24">
                 <div className="w-full flex flex-col lg:flex-row gap-8 bg-white justify-center items-center p-12 shadow-xl rounded-md">
                     <form onSubmit={handleSubmit(onSubmit)} className="w-1/2 space-y-2">
                         <h3 className="text-center text-3xl font-semibold">Login!</h3>
@@ -36,7 +38,7 @@ const Login = () => {
                             {errors.password && <p>Password Field Is Required!</p>}
                         </div>
                         <div className="text-center pt-4">
-                            <input type="submit" value="Login" className="btn bg-green-600 hover:bg-green-700 px-10 py-4 text-white font-semibold" />
+                            <input type="submit" value="Login" className="w-full btn bg-green-600 hover:bg-green-700 text-white font-semibold" />
                         </div>
                         <div className="divider py-6">OR</div>
                         <SocialLogin></SocialLogin>
