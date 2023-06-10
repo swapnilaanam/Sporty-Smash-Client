@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import ActiveLink from '../ActiveLink/ActiveLink';
+import useAuth from '../../../hooks/useAuth';
 
 const NavBar = () => {
-    const user = true;
+    const { user } = useAuth();
 
     const navItems = <>
         <li><ActiveLink to="/">Home</ActiveLink></li>
@@ -12,8 +13,10 @@ const NavBar = () => {
             user ? <>
                 <li><ActiveLink to="/classes">Dashboard</ActiveLink></li>
                 <li>
-                    <div className="w-10 rounded-full">
-                        <img src={user?.photoURL} />
+                    <div className="avatar">
+                        <div className="w-10 rounded-full">
+                            <img src={user?.photoURL} />
+                        </div>
                     </div>
                 </li>
                 <li>

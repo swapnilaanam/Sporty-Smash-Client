@@ -9,8 +9,10 @@ const Login = () => {
     const [isPasswordHidden, setIsPasswordHidden] = useState(true);
 
     const { register, handleSubmit, formState: { errors } } = useForm();
-    
-    const onSubmit = data => console.log(data);
+
+    const onSubmit = data => {
+        console.log(data);
+    }
 
     return (
         <div className="bg-green-50">
@@ -23,7 +25,7 @@ const Login = () => {
                                 <span className="label-text text-lg">Email: </span>
                             </label>
                             <input type="email" {...register("email", { required: true })} placeholder="Enter your email address" className="input input-bordered input-info w-full" />
-                            {errors.email && <p>Email Field Is Required!</p>}
+                            {errors.email && <p className="mt-2 text-red-600">Email Field Is Required!</p>}
                         </div>
                         <div className="form-control w-full">
                             <label className="label">
@@ -35,7 +37,7 @@ const Login = () => {
                                     {isPasswordHidden ? <FaEyeSlash /> : <FaEye />}
                                 </span>
                             </div>
-                            {errors.password && <p>Password Field Is Required!</p>}
+                            {errors.password && <p className="mt-2 text-red-600">Password Field Is Required!</p>}
                         </div>
                         <div className="text-center pt-4">
                             <input type="submit" value="Login" className="w-full btn bg-green-600 hover:bg-green-700 text-white font-semibold" />
