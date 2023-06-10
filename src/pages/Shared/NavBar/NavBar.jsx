@@ -17,7 +17,7 @@ const NavBar = () => {
         <li><ActiveLink to="/classes">Classes</ActiveLink></li>
         {
             user ? <>
-                <li><ActiveLink to="/classes">Dashboard</ActiveLink></li>
+                <li><ActiveLink to="/dashboard">Dashboard</ActiveLink></li>
                 <li>
                     <div className="avatar">
                         <div className="w-10 rounded-full">

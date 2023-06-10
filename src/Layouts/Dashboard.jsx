@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import ActiveLink from '../pages/Shared/ActiveLink/ActiveLink';
 import { Outlet } from 'react-router-dom';
+import useAdmin from '../hooks/useAdmin';
 
 const Dashboard = () => {
     const [isOpen, setIsOpen] = useState(false);
 
+    // const [isAdmin] = useAdmin();
     const isAdmin = true;
     const isInstructor = false;
 
