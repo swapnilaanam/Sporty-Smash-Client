@@ -3,15 +3,37 @@ import loginImg from '../../../assets/images/login.jpg';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useState } from "react";
 import SocialLogin from "../../Shared/SocialLogin/SocialLogin";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import useAuth from "../../../hooks/useAuth";
+import Swal from "sweetalert2";
 
 const Login = () => {
     const [isPasswordHidden, setIsPasswordHidden] = useState(true);
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { signIn } = useAuth();
+
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
+
+    const navigate = useNavigate();
 
     const onSubmit = data => {
-        console.log(data);
+        signIn(data.email, data.password)
+            .then(result => {
+                const loggedUser = result.user;
+                // console.log(loggedUser);
+                reset();
+                Swal.fire({
+                    title: 'User SignedIn successfully...',
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                    }
+                })
+                navigate('/');
+            })
+            .catch(error => console.log(error));
     }
 
     return (

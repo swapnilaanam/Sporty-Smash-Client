@@ -42,7 +42,7 @@ const Registration = () => {
                                     if (data.insertedId) {
                                         reset();
                                         Swal.fire({
-                                            title: 'User created successfully...',
+                                            title: 'User created successfully, Login Now !',
                                             showClass: {
                                                 popup: 'animate__animated animate__fadeInDown'
                                             },
@@ -124,7 +124,7 @@ const Registration = () => {
                             <input type="submit" value="Register" className="w-full btn bg-green-600 hover:bg-green-700 text-white font-semibold" />
                         </div>
                         <div className="divider py-6">OR</div>
-                        {/* <SocialLogin></SocialLogin> */}
+                        <SocialLogin></SocialLogin>
                         <p className="text-center py-2 text-lg">
                             Already Have An Account?
                             <Link to="/login" className="text-blue-500 font-medium ms-2">Login.</Link>
