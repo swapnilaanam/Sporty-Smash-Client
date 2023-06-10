@@ -1,9 +1,15 @@
 import { Link } from 'react-router-dom';
-import ActiveLink from '../ActiveLink/ActiveLink';
 import useAuth from '../../../hooks/useAuth';
+import ActiveLink from '../ActiveLink/ActiveLink';
 
 const NavBar = () => {
-    const { user } = useAuth();
+    const { user, logOut } = useAuth();
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error));
+    }
 
     const navItems = <>
         <li><ActiveLink to="/">Home</ActiveLink></li>
@@ -20,9 +26,11 @@ const NavBar = () => {
                     </div>
                 </li>
                 <li>
-                    <button className="btn btn-warning ms-2 px-6 capitalize text-base">
-                        LogOut
-                    </button>
+                    <div>
+                        <button onClick={handleLogOut} className="btn btn-warning capitalize px-6">
+                            LogOut
+                        </button>
+                    </div>
                 </li>
             </> : <>
                 <li>
