@@ -7,6 +7,7 @@ import Dashboard from "../Layouts/Dashboard";
 import ManageUsers from "../pages/Dashboard/ManageUsers/ManageUsers";
 import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute";
+import AddClass from "../pages/Dashboard/AddClass/AddClass";
 
 export const router = createBrowserRouter([
     {
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
             {
                 path: 'manageusers',
                 element: <AdminRoute><ManageUsers></ManageUsers></AdminRoute>
+            },
+            {
+                path: 'addclass',
+                element: <AddClass></AddClass>
             }
         ]
     }

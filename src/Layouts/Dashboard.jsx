@@ -4,12 +4,13 @@ import { Outlet } from 'react-router-dom';
 import useAdmin from '../hooks/useAdmin';
 import NavBar from '../pages/Shared/Navbar/NavBar';
 import Footer from '../pages/Shared/Footer/Footer';
+import useInstructor from '../hooks/useInstructor';
 
 const Dashboard = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const [isAdmin] = useAdmin();
-    const isInstructor = false;
+    const [isInstructor] = useInstructor();
 
     const toggleDrawer = () => {
         setIsOpen(!isOpen);
