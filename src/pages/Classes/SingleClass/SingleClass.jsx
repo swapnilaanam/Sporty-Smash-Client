@@ -34,13 +34,13 @@ const SingleClass = ({ singleClass }) => {
     const handleSelectedClass = () => {
         const selectedClass = { classId: _id, className, classImage, instructorName, instructorEmail, price, studentName: user?.displayName, studentEmail: user?.email };
 
-        console.log(selectedClass);
+        // console.log(selectedClass);
 
         axiosSecure.post('/carts', {
             selectedClass
         })
             .then(res => {
-                console.log(res.data);
+                // console.log(res.data);
                 if (res.data.insertedId) {
                     Swal.fire({
                         position: 'top-end',
@@ -72,11 +72,11 @@ const SingleClass = ({ singleClass }) => {
                     <p className="font-medium text-base">Instructor Name: {instructorName}</p>
                     <p className="font-medium text-base">
                         Available Seats:
-                        <div className="badge badge-neutral badge-lg ms-2 px-5 py-4 text-white">{availableSeats}</div>
+                        <span className="badge badge-neutral badge-lg ms-2 px-5 py-4 text-white">{availableSeats}</span>
                     </p>
                     <p className="font-medium text-base">
                         Price:
-                        <div className="badge badge-success badge-lg ms-2 px-5 py-4">{price}</div>
+                        <span className="badge badge-success badge-lg ms-2 px-5 py-4">${price}</span>
                     </p>
                     <button onClick={handleSelectedClass} className="btn btn-warning font-semibold text-base" disabled={availableSeats === 0 || isAdmin || isInstructor}>Select Class</button>
                 </div>
