@@ -3,7 +3,6 @@ import useAuth from '../../../hooks/useAuth';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import Swal from 'sweetalert2';
-import { useForm } from 'react-hook-form';
 
 const ManageClasses = () => {
     const { user } = useAuth();
@@ -55,16 +54,44 @@ const ManageClasses = () => {
             });
     }
 
-    const { register, handleSubmit, formState: { errors }, reset} = useForm();
+    const handleSendFeedback = (e, id) => {
+        // console.log(id);
+        const feedbackElement = e.target.parentElement.previousElementSibling.firstElementChild;
 
-    const onSubmit = data => {
-        axiosSecure.patch(`/classes/feedback/${data.classId}`, {
-            feedback: data.feedback
+        const feedback = feedbackElement.value;
+
+        if (feedback === '') {
+            let timerInterval;
+            Swal.fire({
+                title: 'No Feedback is given! Give feedback and try again!',
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: () => {
+                    Swal.showLoading()
+                    const b = Swal.getHtmlContainer().querySelector('b')
+                    timerInterval = setInterval(() => {
+                    }, 100)
+                },
+                willClose: () => {
+                    clearInterval(timerInterval)
+                }
+            }).then((result) => {
+                if (result.dismiss === Swal.DismissReason.timer) {
+                    console.log('I was closed by the timer')
+                }
+            });
+            return;
+        }
+
+        // console.log(feedback);
+
+        axiosSecure.patch(`/classes/feedback/${id}`, {
+            feedback: feedback
         })
             .then(res => {
                 console.log(res.data);
                 if (res.data.modifiedCount > 0) {
-                    reset();
+                    feedbackElement.value = '';
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
@@ -73,7 +100,7 @@ const ManageClasses = () => {
                         timer: 1500
                     })
                 }
-            })
+            });
     }
 
     return (
@@ -106,7 +133,7 @@ const ManageClasses = () => {
                                 </td>
                                 <td>
                                     <div className="avatar">
-                                        <div className="mask mask-squircle w-20 h-20">
+                                        <div className="mask mask-squircle w-16 h-16">
                                             <img src={singleClass.classImage} alt="Avatar Tailwind CSS Component" />
                                         </div>
                                     </div>
@@ -143,20 +170,15 @@ const ManageClasses = () => {
                                         <input type="checkbox" id={`my_modal_${index + 1}`} className="modal-toggle" />
                                         <div className="modal">
                                             <div className="modal-box">
-                                                <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+                                                <div className="space-y-4">
                                                     <h3 className="font-bold text-lg">Write Your Feedback!</h3>
-                                                    <div className="form-control hidden">
-                                                        <input {...register("classId", { required: true })} className='input input-bordered' defaultValue={singleClass._id} />
-                                                        {errors.classId && <span className="mt-2 text-red-600">Class Id is required</span>}
+                                                    <div className="form-control">
+                                                        <textarea className='textarea textarea-bordered' placeholder='Write Your Feedback'></textarea>
                                                     </div>
                                                     <div className="form-control">
-                                                        <textarea {...register("feedback", { required: true })} className='textarea textarea-bordered' placeholder='Write Your Feedback'></textarea>
-                                                        {errors.feedback && <span className="mt-2 text-red-600">Feedback is required</span>}
+                                                        <input type="button" onClick={() => handleSendFeedback(event, singleClass._id)} className="btn btn-warning" value="Send FeedBack" />
                                                     </div>
-                                                    <div className="form-control">
-                                                        <input type="submit" className="btn btn-warning" value="Send FeedBack" />
-                                                    </div>
-                                                </form>
+                                                </div>
                                                 <div className="modal-action">
                                                     <label htmlFor={`my_modal_${index + 1}`} className="btn bg-red-600 text-white hover:bg-red-600 hover:text-white">Close</label>
                                                 </div>

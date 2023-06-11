@@ -8,7 +8,7 @@ const Instructor = ({ instructor }) => {
             <figure><img src={profile} alt="instructor" /></figure>
             <div className="card-body my-4 items-center">
                 <h2 className="card-title">Name: {name}</h2>
-                <p>Email: {email}</p>
+                <p className="font-medium text-base">Email: {email}</p>
             </div>
         </div>
     );

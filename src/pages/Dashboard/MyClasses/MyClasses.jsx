@@ -75,8 +75,8 @@ const MyClasses = () => {
                                 <td className="text-base">
                                     {
                                         singleClass.feedback === '' ? 'No Feedback' : <>
-                                            <button className="btn btn-neutral text-white" onClick={() => feedback_modal_1.showModal()}>See Feedback</button>
-                                            <dialog id="feedback_modal_1" className="modal">
+                                            {/* <button className="btn btn-neutral text-white" onClick={() => `feedback_modal_${index + 1}`.showModal()}>See Feedback</button>
+                                            <dialog id={`feedback_modal_${index + 1}`} className="modal">
                                                 <form method="dialog" className="modal-box">
                                                     <h3 className="font-bold text-lg">Feedback!</h3>
                                                     <p className="py-4">{singleClass.feedback}</p>
@@ -84,7 +84,22 @@ const MyClasses = () => {
                                                         <button className="btn bg-red-500 text-white">Close</button>
                                                     </div>
                                                 </form>
-                                            </dialog>
+                                            </dialog> */}
+                                            <label className="btn btn-neutral text-white" htmlFor={`my_modal_feedback_${index + 1}`}>
+                                                See Feedback
+                                            </label>
+
+                                            {/* Put this part before </body> tag */}
+                                            <input type="checkbox" id={`my_modal_feedback_${index + 1}`} className="modal-toggle" />
+                                            <div className="modal">
+                                                <div className="modal-box">
+                                                    <h3 className="font-bold text-lg">Feedback!</h3>
+                                                    <p className="py-4">{singleClass.feedback}</p>
+                                                    <div className="modal-action">
+                                                        <label htmlFor={`my_modal_feedback_${index + 1}`} className="btn bg-red-500 text-white hover:bg-red-600 hover:text-white">Close</label>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </>
                                     }
                                 </td>
