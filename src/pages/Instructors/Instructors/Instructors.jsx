@@ -27,7 +27,7 @@ const Instructors = () => {
                     </div>
                 </div>
             </div>
-            <div className="max-w-5xl mx-auto py-24 flex justify-center items-center flex-wrap gap-14">
+            <div className="max-w-7xl mx-auto py-24 flex justify-center items-center flex-wrap gap-14">
                 {
                     instructors.map(instructor => <Instructor
                         key={instructor._id} instructor={instructor}

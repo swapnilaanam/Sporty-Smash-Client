@@ -26,7 +26,7 @@ const Classes = () => {
                     </div>
                 </div>
             </div>
-            <div className="max-w-5xl mx-auto py-24 flex justify-center items-center flex-wrap gap-14">
+            <div className="max-w-7xl mx-auto py-24 flex justify-center items-center flex-wrap gap-14">
                 {
                     classes.map(singleClass => <SingleClass
                         key={singleClass._id} singleClass={singleClass}
