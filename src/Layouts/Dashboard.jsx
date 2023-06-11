@@ -27,14 +27,14 @@ const Dashboard = () => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-80 h-full bg-sky-500 text-white">
+                    <ul className="menu p-4 w-72 h-full bg-sky-500 text-white">
                         {
                             isAdmin ? <>
                                 <li><ActiveLink to="/dashboard/manageclasses">Manage Classes</ActiveLink></li>
                                 <li><ActiveLink to="/dashboard/manageusers">Manage Users</ActiveLink></li>
                             </> : isInstructor ? <>
                                 <li><ActiveLink to="/dashboard/addclass">Add A Class</ActiveLink></li>
-                                <li><ActiveLink to="dashboard/myclasses">My Classes</ActiveLink></li>
+                                <li><ActiveLink to="/dashboard/myclasses">My Classes</ActiveLink></li>
                             </> : <>
                                 <li><ActiveLink to="/dashboard/myselectedclasses">My Selected Classes</ActiveLink></li>
                                 <li><ActiveLink to="/dashboard/myenrolledclasses">My Enrolled Classes</ActiveLink></li>
