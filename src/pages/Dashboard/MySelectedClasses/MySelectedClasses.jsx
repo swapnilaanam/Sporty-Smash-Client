@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import useAuth from '../../../hooks/useAuth';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const MySelectedClasses = () => {
     const { user } = useAuth();
@@ -44,7 +45,7 @@ const MySelectedClasses = () => {
 
     return (
         <div className="w-full px-10 h-full">
-            <h2 className="text-black text-3xl font-medium text-center my-12">Manage Users</h2>
+            <h2 className="text-black text-3xl font-medium text-center my-12">My Selected Classes</h2>
             <div className="overflow-x-auto">
                 <table className="table text-center border-2 table-zebra">
                     <thead className="bg-stone-400 text-black text-base">
@@ -81,16 +82,18 @@ const MySelectedClasses = () => {
                                     {selectedClass.instructorName}
                                 </td>
                                 <td>
-                                    {selectedClass.price}
+                                    ${selectedClass.price}
                                 </td>
                                 <th>
                                     <div className="flex justify-center gap-5">
                                         <button onClick={() => handleDelete(selectedClass)} className="btn btn-warning btn-sm">
                                             Delete
                                         </button>
-                                        <button onClick={() => handlePayment(selectedClass)} className="btn btn-success btn-sm">
-                                            Pay
-                                        </button>
+                                        <Link to={`/dashboard/payment/${selectedClass._id}`}>
+                                            <button className="btn btn-success btn-sm">
+                                                Pay
+                                            </button>
+                                        </Link>
                                     </div>
                                 </th>
                             </tr>

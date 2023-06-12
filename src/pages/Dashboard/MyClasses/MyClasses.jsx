@@ -16,7 +16,7 @@ const MyClasses = () => {
 
     return (
         <div className="w-full px-4 h-full">
-            <h2 className="text-black text-3xl font-medium text-center my-12">Manage Classes</h2>
+            <h2 className="text-black text-3xl font-medium text-center my-12">My Classes</h2>
             <div className="overflow-x-auto">
                 <table className="table table-xs text-center border-2 table-zebra">
                     <thead className="bg-stone-400 text-black text-base">
