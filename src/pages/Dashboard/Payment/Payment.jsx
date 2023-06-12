@@ -20,7 +20,7 @@ const Payment = () => {
     }, [id]);
 
     return (
-        <div className="w-full px-10 h-full">
+        <div className="w-full px-10 h-full bg-emerald-50">
             <h2 className="text-black text-3xl font-medium text-center my-12">Payment</h2>
             <Elements stripe={stripePromise}>
                 <CheckoutForm classInfo={classInfo} price={classInfo.price} selectedClassId={id}></CheckoutForm>

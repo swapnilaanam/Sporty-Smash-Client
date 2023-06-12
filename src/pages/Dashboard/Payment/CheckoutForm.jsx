@@ -4,7 +4,7 @@ import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useAuth from "../../../hooks/useAuth";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
-// import './CheckoutForm.css';
+import './CheckoutForm.css';
 
 const CheckoutForm = ({ classInfo, price, selectedClassId }) => {
     const stripe = useStripe();
@@ -18,7 +18,7 @@ const CheckoutForm = ({ classInfo, price, selectedClassId }) => {
     const [transactionId, setTransactionId] = useState('');
 
     useEffect(() => {
-        if (price) {
+        if (price && price > 0) {
             // console.log(price);
             axiosSecure.post('/create-payment-intent', {
                 price
@@ -138,8 +138,8 @@ const CheckoutForm = ({ classInfo, price, selectedClassId }) => {
     };
 
     return (
-        <>
-            <form className="w-2/3" onSubmit={handleSubmit}>
+        <div className="w-1/3 mx-auto">
+            <form onSubmit={handleSubmit}>
                 <CardElement
                     options={{
                         style: {
@@ -156,13 +156,13 @@ const CheckoutForm = ({ classInfo, price, selectedClassId }) => {
                         },
                     }}
                 />
-                <button type="submit" className="btn btn-warning btn-sm mt-4" disabled={!stripe || !clientSecret || processing}>
+                <button type="submit" className="btn btn-warning btn-sm mt-4 w-full h-8 font-semibold text-lg" disabled={!stripe || !clientSecret || processing}>
                     Pay
                 </button>
             </form>
             {cardError && <p className="text-red-600 mt-4">{cardError}</p>}
             {transactionId && <p className="text-green-500 mt-4">Transaction complete with transactionId: {transactionId}</p>}
-        </>
+        </div>
     );
 };
 
