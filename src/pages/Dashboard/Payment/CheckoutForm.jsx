@@ -2,6 +2,8 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useEffect, useState } from "react";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useAuth from "../../../hooks/useAuth";
+import { useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 // import './CheckoutForm.css';
 
 const CheckoutForm = ({ classInfo, price, selectedClassId }) => {
@@ -27,6 +29,14 @@ const CheckoutForm = ({ classInfo, price, selectedClassId }) => {
                 })
         }
     }, [price]);
+
+    useEffect(() => {
+        if (!selectedClassId) {
+            console.log('Hello');
+            const { id } = useParams();
+            selectedClassId = id;
+        }
+    }, []);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -77,7 +87,7 @@ const CheckoutForm = ({ classInfo, price, selectedClassId }) => {
         console.log('paymentIntent', paymentIntent);
         setProcessing(false);
 
-        if(paymentIntent.status === 'succeeded') {
+        if (paymentIntent.status === 'succeeded') {
             setTransactionId(paymentIntent.id);
 
             const payment = {
@@ -91,19 +101,39 @@ const CheckoutForm = ({ classInfo, price, selectedClassId }) => {
 
             // console.log(payment);
             axiosSecure.post('/payments', payment)
-            .then(res => {
-                console.log(res.data);
-                if(res.data.insertedId) {
-                    console.log('inserted into the payment history');
-                    axiosSecure.delete(`/carts/${selectedClassId}`)
-                    .then(res => {
-                        console.log(res.data);
-                        if(res.data.deletedCount > 0) {
-                            console.log('deleted from the selected class');
-                        }
-                    })
-                }
-            })
+                .then(res => {
+                    // console.log(res.data);
+                    if (res.data.insertedId) {
+                        // console.log('inserted into the payment history');
+                        axiosSecure.delete(`/carts/${selectedClassId}`)
+                            .then(res => {
+                                // console.log(res.data);
+                                if (res.data.deletedCount > 0) {
+                                    // console.log('deleted from the selected class');
+                                    const { classId, className, classImage, instructorName, instructorEmail, price, studentName, studentEmail } = classInfo;
+
+                                    const enrolledClass = { classId, className, classImage, instructorName, instructorEmail, price, studentName, studentEmail, paymentTransactionId: paymentIntent.id };
+
+                                    // console.log(enrolledClass);
+
+                                    axiosSecure.post('/enrolledclasses', enrolledClass)
+                                        .then(res => {
+                                            // console.log(res.data);
+                                            if (res.data.insertedId) {
+                                                // console.log('inserted into the enrolled classes....');
+                                                Swal.fire({
+                                                    position: 'top-end',
+                                                    icon: 'success',
+                                                    title: `Payment Successful! You are now enrolled into ${enrolledClass.className}`,
+                                                    showConfirmButton: false,
+                                                    timer: 2500
+                                                });
+                                            }
+                                        })
+                                }
+                            })
+                    }
+                })
         }
     };
 
