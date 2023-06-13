@@ -60,8 +60,8 @@ button[disabled] {
   opacity: 0.6;
 } */
 
-input,
-select {
+.checkoutform input,
+.checkoutform select {
   display: block;
   border: none;
   font-size: 18px;
@@ -77,7 +77,7 @@ select {
   width: 500px;
 }
 
-input::placeholder {
+.checkoutform input::placeholder {
   color: #aab7c4;
 }
 
