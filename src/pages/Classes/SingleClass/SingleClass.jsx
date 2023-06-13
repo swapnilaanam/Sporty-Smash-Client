@@ -64,22 +64,20 @@ const SingleClass = ({ singleClass }) => {
     }
 
     return (
-        <div>
-            <div className={`card card-compact w-96 shadow-xl ${availableSeats === 0 ? 'bg-red-500' : 'bg-base-100'}`}>
-                <figure><img src={classImage} alt="instructor" className="w-full h-[288px]"/></figure>
-                <div className="card-body my-4 space-y-3">
-                    <h2 className="card-title">{className}</h2>
-                    <p className="font-medium text-base">Instructor Name: {instructorName}</p>
-                    <p className="font-medium text-base">
-                        Available Seats:
-                        <span className="badge badge-neutral badge-lg ms-2 px-5 py-4 text-white">{availableSeats}</span>
-                    </p>
-                    <p className="font-medium text-base">
-                        Price:
-                        <span className="badge badge-success badge-lg ms-2 px-5 py-4">${price}</span>
-                    </p>
-                    <button onClick={handleSelectedClass} className="btn btn-warning font-semibold text-base" disabled={availableSeats === 0 || isAdmin || isInstructor}>Select Class</button>
-                </div>
+        <div className={`card card-compact w-96 shadow-xl ${availableSeats === 0 ? 'bg-red-500' : 'bg-base-100'}`}>
+            <figure><img src={classImage} alt="instructor" className="w-full h-[288px]" /></figure>
+            <div className="card-body my-4 space-y-3">
+                <h2 className="card-title">{className}</h2>
+                <p className="font-medium text-base">Instructor Name: {instructorName}</p>
+                <p className="font-medium text-base">
+                    Available Seats:
+                    <span className="badge badge-neutral badge-lg ms-2 px-5 py-4 text-white">{availableSeats}</span>
+                </p>
+                <p className="font-medium text-base">
+                    Price:
+                    <span className="badge badge-success badge-lg ms-2 px-5 py-4">${price}</span>
+                </p>
+                <button onClick={handleSelectedClass} className="btn btn-warning font-semibold text-base" disabled={availableSeats === 0 || isAdmin || isInstructor}>Select Class</button>
             </div>
         </div>
     );

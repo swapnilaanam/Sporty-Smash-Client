@@ -43,7 +43,7 @@ const TopSlider = () => {
                                     <button className="btn btn-neutral shadow-lg border-2 text-base">See Our Classes</button>
                                 </Link>
                                 <Link to="/instructors">
-                                    <button className="btn btn-warning shadow-lg border-2 text-base">See Our Instructors</button>
+                                    <button className="btn btn-warning shadow-lg border-2 text-base h-16 lg:h-0">See Our Instructors</button>
                                 </Link>
                             </div>
                         </div>
