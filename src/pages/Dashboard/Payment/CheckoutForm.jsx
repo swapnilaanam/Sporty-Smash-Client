@@ -121,13 +121,19 @@ const CheckoutForm = ({ classInfo, price, selectedClassId }) => {
                                             // console.log(res.data);
                                             if (res.data.insertedId) {
                                                 // console.log('inserted into the enrolled classes....');
-                                                Swal.fire({
-                                                    position: 'top-end',
-                                                    icon: 'success',
-                                                    title: `Payment Successful! You are now enrolled into ${enrolledClass.className}`,
-                                                    showConfirmButton: false,
-                                                    timer: 2500
-                                                });
+                                                axiosSecure.patch(`/classes/enrolled/${classInfo.classId}`)
+                                                    .then(res => {
+                                                        // console.log(res.data);
+                                                        if (res.data.modifiedCount > 0) {
+                                                            Swal.fire({
+                                                                position: 'top-end',
+                                                                icon: 'success',
+                                                                title: `Payment Successful! You are now enrolled into ${enrolledClass.className}`,
+                                                                showConfirmButton: false,
+                                                                timer: 2500
+                                                            });
+                                                        }
+                                                    })
                                             }
                                         })
                                 }
@@ -161,7 +167,7 @@ const CheckoutForm = ({ classInfo, price, selectedClassId }) => {
                 </button>
             </form>
             {cardError && <p className="text-red-600 mt-4">{cardError}</p>}
-            {transactionId && <p className="text-green-500 mt-4">Transaction complete with transactionId: {transactionId}</p>}
+            {transactionId && <p className="text-green-500 mt-4">Transaction complete with transactionId: {transactionId} (Wait few seconds for confirmation sweet alert)</p>}
         </div>
     );
 };
