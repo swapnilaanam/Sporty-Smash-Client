@@ -30,7 +30,7 @@ const PaymentHistory = () => {
     return (
         <div className="w-full px-10 h-full">
             <h2 className="text-black text-3xl font-medium text-center my-12">Payment History</h2>
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto mb-10">
                 <table className="table text-center border-2 table-zebra">
                     <thead className="bg-stone-400 text-black text-base">
                         <tr>

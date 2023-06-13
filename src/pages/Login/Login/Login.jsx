@@ -3,7 +3,7 @@ import loginImg from '../../../assets/images/login.jpg';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useState } from "react";
 import SocialLogin from "../../Shared/SocialLogin/SocialLogin";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import Swal from "sweetalert2";
 
@@ -15,6 +15,9 @@ const Login = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
     const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/';
 
     const onSubmit = data => {
         signIn(data.email, data.password)
@@ -31,7 +34,7 @@ const Login = () => {
                         popup: 'animate__animated animate__fadeOutUp'
                     }
                 })
-                navigate('/');
+                navigate(from, { replace: true });
             })
             .catch(error => console.log(error));
     }

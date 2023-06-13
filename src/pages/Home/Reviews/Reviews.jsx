@@ -8,7 +8,7 @@ const Reviews = () => {
                         <input type="radio" name="rating-1" className="mask mask-star-2 bg-orange-400" />
                         <input type="radio" name="rating-1" className="mask mask-star-2 bg-orange-400" />
                         <input type="radio" name="rating-1" className="mask mask-star-2 bg-orange-400" />
-                        <input type="radio" name="rating-1" className="mask mask-star-2 bg-orange-400" checked />
+                        <input type="radio" name="rating-1" className="mask mask-star-2 bg-orange-400" defaultChecked />
                         <input type="radio" name="rating-1" className="mask mask-star-2 bg-orange-400" />
                     </div>
                     <div className="font-semibold mb-1">Rakib Elahi</div>
@@ -25,7 +25,7 @@ const Reviews = () => {
                         <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
                         <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
                         <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" />
-                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" checked />
+                        <input type="radio" name="rating-2" className="mask mask-star-2 bg-orange-400" defaultChecked />
                     </div>
                     <div className="font-semibold mb-1">Andrew Duke</div>
                     <div className="text-gray-500 text-sm mb-2">Instructor</div>
@@ -40,11 +40,11 @@ const Reviews = () => {
                         <input type="radio" name="rating-3" className="mask mask-star-2 bg-orange-400" />
                         <input type="radio" name="rating-3" className="mask mask-star-2 bg-orange-400" />
                         <input type="radio" name="rating-3" className="mask mask-star-2 bg-orange-400" />
-                        <input type="radio" name="rating-3" className="mask mask-star-2 bg-orange-400" checked />
+                        <input type="radio" name="rating-3" className="mask mask-star-2 bg-orange-400" defaultChecked />
                         <input type="radio" name="rating-3" className="mask mask-star-2 bg-orange-400" />
                     </div>
                     <div className="font-semibold mb-1">Arman Ahmed</div>
-                    <div className="text-gray-500 text-sm mb-2">Instructor</div>
+                    <div className="text-gray-500 text-sm mb-2">Student</div>
                     <div className="text-gray-800">
                         <p>
                             Sports classes of this platform are great. But the platform needs to improve customer service.
