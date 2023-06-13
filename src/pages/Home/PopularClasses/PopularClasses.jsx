@@ -15,21 +15,20 @@ const PopularClasses = () => {
 
     return (
         <div className="py-24 px-4">
-
-            <h2 className="text-center font-bold text-3xl uppercase mb-20">--- Popular Classes ---</h2>
+            <h2 className="text-center font-bold text-3xl uppercase mb-20">Popular Classes</h2>
             <div className="flex flex-col lg:flex-row justify-center items-center flex-wrap gap-14">
                 {
                     popularClasses.map(popularClass => <motion.div
                         key={popularClass._id}
                         initial={{ opacity: 0}}
                         whileInView={{ opacity: 1}}
-                        transition={{ duration: 2.5 }}
+                        transition={{ duration: 2 }}
                     >
                         <div
-                            className="card card-compact w-96 bg-base-100 shadow-xl"
+                            className="card card-compact w-80 lg:w-96 bg-base-100 shadow-xl"
                         >
                             <figure>
-                                <img src={popularClass.classImage} alt="Popular Class" className="w-full h-[288px] object-cover" />
+                                <img src={popularClass.classImage} alt="Popular Class" className="w-full h-[260px] lg:h-[288px] object-cover" />
                             </figure>
                             <div className="card-body my-4 space-y-3">
                                 <h2 className="card-title">{popularClass.className}</h2>
