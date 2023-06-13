@@ -1,7 +1,9 @@
+import TopSlider from "../TopSlider/TopSlider";
+
 const Home = () => {
     return (
-        <div>
-            <h2>Home</h2>
+        <div className="bg-emerald-50">
+            <TopSlider></TopSlider>
         </div>
     );
 };
