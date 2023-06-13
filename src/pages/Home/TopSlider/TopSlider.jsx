@@ -20,10 +20,10 @@ const TopSlider = () => {
                 slidesPerView={1}
                 spaceBetween={30}
                 loop={true}
-                autoplay={{
-                    delay: 8000,
-                    disableOnInteraction: false,
-                }}
+                // autoplay={{
+                //     delay: 8000,
+                //     disableOnInteraction: false,
+                // }}
                 pagination={{
                     clickable: true,
                 }}
