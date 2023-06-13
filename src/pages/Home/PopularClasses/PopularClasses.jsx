@@ -8,7 +8,7 @@ const PopularClasses = () => {
         queryKey: ['popularClasses'],
         queryFn: async () => {
             const res = await axios.get('http://localhost:5000/classes/popular');
-            console.log(res.data);
+            // console.log(res.data);
             return res.data;
         }
     });
@@ -20,12 +20,12 @@ const PopularClasses = () => {
             <div className="flex flex-col lg:flex-row justify-center items-center flex-wrap gap-14">
                 {
                     popularClasses.map(popularClass => <motion.div
-                        initial={{ opacity: 0, translateX: -150 }}
-                        whileInView={{ opacity: 1, translateX: 0 }}
-                        transition={{ duration: 1.8 }}
+                        key={popularClass._id}
+                        initial={{ opacity: 0}}
+                        whileInView={{ opacity: 1}}
+                        transition={{ duration: 2.5 }}
                     >
                         <div
-                            key={popularClass._id}
                             className="card card-compact w-96 bg-base-100 shadow-xl"
                         >
                             <figure>
