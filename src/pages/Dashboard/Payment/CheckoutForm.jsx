@@ -94,7 +94,7 @@ const CheckoutForm = ({ classInfo, price, selectedClassId }) => {
                 email: user?.email,
                 transactionId: paymentIntent.id,
                 price,
-                data: new Date(),
+                date: new Date(),
                 classId: classInfo.classId,
                 className: classInfo.className
             }
