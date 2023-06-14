@@ -6,6 +6,7 @@ import SocialLogin from "../../Shared/SocialLogin/SocialLogin";
 import loginImg from '../../../assets/images/login.jpg';
 import useAuth from "../../../hooks/useAuth";
 import Swal from "sweetalert2";
+import useTitle from "../../../hooks/useTitle";
 
 
 const Registration = () => {
@@ -17,6 +18,8 @@ const Registration = () => {
     const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
 
     const navigate = useNavigate();
+
+    useTitle('Register');
 
     const onSubmit = data => {
         if (data.password === data.confirm) {

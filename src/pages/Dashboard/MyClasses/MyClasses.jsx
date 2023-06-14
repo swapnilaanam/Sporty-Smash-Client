@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../../hooks/useAuth";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import useTitle from "../../../hooks/useTitle";
 
 const MyClasses = () => {
     const { user } = useAuth();
@@ -13,6 +14,8 @@ const MyClasses = () => {
             return res.data;
         }
     });
+
+    useTitle('My Classes');
 
     return (
         <div className="w-full px-4 h-full">

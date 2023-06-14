@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import useAuth from "../../../hooks/useAuth";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import useTitle from "../../../hooks/useTitle";
 
 const img_hosting_token = import.meta.env.VITE_Image_Upload_token;
 
@@ -13,6 +14,8 @@ const AddClass = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
     const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`;
+
+    useTitle('Add Class');
 
     const onSubmit = data => {
 

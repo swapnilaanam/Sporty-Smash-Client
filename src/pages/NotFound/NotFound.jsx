@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import errorImg from '../../assets/images/404.jpg';
+import useTitle from '../../hooks/useTitle';
 
 const NotFound = () => {
+    useTitle('404');
 
     return (
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row-reverse items-center justify-center h-screen">

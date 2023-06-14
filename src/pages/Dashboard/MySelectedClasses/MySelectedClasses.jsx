@@ -3,6 +3,7 @@ import useAuth from '../../../hooks/useAuth';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
+import useTitle from '../../../hooks/useTitle';
 
 const MySelectedClasses = () => {
     const { user } = useAuth();
@@ -15,6 +16,8 @@ const MySelectedClasses = () => {
             return res.data;
         }
     });
+
+    useTitle('My Selected Classes');
 
     const handleDelete = selectedClass => {
         Swal.fire({

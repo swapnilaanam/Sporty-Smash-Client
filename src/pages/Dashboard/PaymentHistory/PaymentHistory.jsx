@@ -1,6 +1,7 @@
 import useAuth from '../../../hooks/useAuth';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
+import useTitle from '../../../hooks/useTitle';
 
 const PaymentHistory = () => {
     const { user } = useAuth();
@@ -13,6 +14,8 @@ const PaymentHistory = () => {
             return res.data;
         }
     });
+
+    useTitle('Payment History');
 
     const formatDate = (date) => {
         const newDate = new Date(date);

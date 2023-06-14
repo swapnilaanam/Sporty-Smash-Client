@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import useTitle from "../../../hooks/useTitle";
 
 const ManageUsers = () => {
     const [axiosSecure] = useAxiosSecure();
@@ -12,6 +13,8 @@ const ManageUsers = () => {
             return res.data;
         }
     });
+
+    useTitle('Manage Users');
 
     const handleMakeInstructor = user => {
         axiosSecure.patch(`/users/${user._id}`, {

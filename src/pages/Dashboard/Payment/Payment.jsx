@@ -4,12 +4,15 @@ import { Elements } from '@stripe/react-stripe-js';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
+import useTitle from '../../../hooks/useTitle';
 
 const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway_PK);
 const Payment = () => {
     const { id } = useParams();
     const [classInfo, setClassInfo] = useState({});
     const [axiosSecure] = useAxiosSecure();
+
+    useTitle('Payment');
 
     useEffect(() => {
         axiosSecure.get(`/carts/${id}`)

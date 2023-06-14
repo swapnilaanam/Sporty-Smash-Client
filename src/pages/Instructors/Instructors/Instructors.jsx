@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import React from 'react';
 import Instructor from '../Instructor/Instructor';
+import useTitle from '../../../hooks/useTitle';
 
 const Instructors = () => {
     const { data: instructors = [], isLoading } = useQuery({
@@ -11,6 +12,8 @@ const Instructors = () => {
             return res.data;
         }
     })
+
+    useTitle('Instructors');
     
     return (
         <div className="bg-emerald-50">

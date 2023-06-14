@@ -6,6 +6,7 @@ import SocialLogin from "../../Shared/SocialLogin/SocialLogin";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import Swal from "sweetalert2";
+import useTitle from "../../../hooks/useTitle";
 
 const Login = () => {
     const [isPasswordHidden, setIsPasswordHidden] = useState(true);
@@ -18,6 +19,8 @@ const Login = () => {
     const location = useLocation();
 
     const from = location.state?.from?.pathname || '/';
+
+    useTitle('Login');
 
     const onSubmit = data => {
         signIn(data.email, data.password)

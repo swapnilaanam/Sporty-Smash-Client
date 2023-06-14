@@ -3,6 +3,7 @@ import useAuth from '../../../hooks/useAuth';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
 import Swal from 'sweetalert2';
+import useTitle from '../../../hooks/useTitle';
 
 const ManageClasses = () => {
     const { user } = useAuth();
@@ -15,6 +16,8 @@ const ManageClasses = () => {
             return res.data;
         }
     });
+
+    useTitle('Manage Classes');
 
     const handleApprove = singleClass => {
         axiosSecure.patch(`/classes/status/${singleClass._id}`, {
