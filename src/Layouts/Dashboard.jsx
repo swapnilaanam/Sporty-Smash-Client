@@ -5,6 +5,7 @@ import useAdmin from '../hooks/useAdmin';
 import NavBar from '../pages/Shared/Navbar/NavBar';
 import Footer from '../pages/Shared/Footer/Footer';
 import useInstructor from '../hooks/useInstructor';
+import { FaBook, FaCartPlus, FaCreditCard, FaPlus, FaRegIdCard, FaSwatchbook, FaUsersCog } from 'react-icons/fa';
 
 const Dashboard = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -27,18 +28,18 @@ const Dashboard = () => {
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                    <ul className="menu p-4 w-64 h-full bg-sky-500 text-white">
+                    <ul className="menu p-4 w-full h-full bg-sky-500 text-white space-y-5">
                         {
                             isAdmin ? <>
-                                <li><ActiveLink to="/dashboard/manageclasses">Manage Classes</ActiveLink></li>
-                                <li><ActiveLink to="/dashboard/manageusers">Manage Users</ActiveLink></li>
+                                <li><ActiveLink to="/dashboard/manageclasses"><FaSwatchbook /> Manage Classes</ActiveLink></li>
+                                <li><ActiveLink to="/dashboard/manageusers"><FaUsersCog /> Manage Users</ActiveLink></li>
                             </> : isInstructor ? <>
-                                <li><ActiveLink to="/dashboard/addclass">Add A Class</ActiveLink></li>
-                                <li><ActiveLink to="/dashboard/myclasses">My Classes</ActiveLink></li>
+                                <li><ActiveLink to="/dashboard/addclass"><FaPlus /> Add A Class</ActiveLink></li>
+                                <li><ActiveLink to="/dashboard/myclasses"><FaBook /> My Classes</ActiveLink></li>
                             </> : <>
-                                <li><ActiveLink to="/dashboard/myselectedclasses">My Selected Classes</ActiveLink></li>
-                                <li><ActiveLink to="/dashboard/myenrolledclasses">My Enrolled Classes</ActiveLink></li>
-                                <li><ActiveLink to="/dashboard/paymenthistory">Payment History</ActiveLink></li>
+                                <li><ActiveLink to="/dashboard/myselectedclasses"><FaCartPlus /> My Selected Classes</ActiveLink></li>
+                                <li><ActiveLink to="/dashboard/myenrolledclasses"><FaRegIdCard /> My Enrolled Classes</ActiveLink></li>
+                                <li><ActiveLink to="/dashboard/paymenthistory"><FaCreditCard /> Payment History</ActiveLink></li>
                             </>
                         }
                     </ul>
