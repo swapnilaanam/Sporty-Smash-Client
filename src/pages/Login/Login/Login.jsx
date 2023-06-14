@@ -10,6 +10,7 @@ import useTitle from "../../../hooks/useTitle";
 
 const Login = () => {
     const [isPasswordHidden, setIsPasswordHidden] = useState(true);
+    const [error, setError] = useState('');
 
     const { signIn } = useAuth();
 
@@ -23,6 +24,7 @@ const Login = () => {
     useTitle('Login');
 
     const onSubmit = data => {
+        setError('');
         signIn(data.email, data.password)
             .then(result => {
                 const loggedUser = result.user;
@@ -39,7 +41,10 @@ const Login = () => {
                 })
                 navigate(from, { replace: true });
             })
-            .catch(error => console.log(error));
+            .catch(error => {
+                console.log(error);
+                setError(error.message);
+            });
     }
 
     return (
@@ -67,6 +72,7 @@ const Login = () => {
                             </div>
                             {errors.password && <p className="mt-2 text-red-600">Password Field Is Required!</p>}
                         </div>
+                        <p className="font-medium text-lg text-red-500 mt-1">{error}</p>
                         <div className="text-center pt-4">
                             <input type="submit" value="Login" className="w-full btn bg-green-600 hover:bg-green-700 text-white font-semibold" />
                         </div>

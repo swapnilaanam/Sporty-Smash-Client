@@ -23,11 +23,14 @@ const PaymentHistory = () => {
         const month = newDate.getMonth() + 1;
         const year = newDate.getFullYear();
 
+        const hour = newDate.getHours();
+        const minute = newDate.getMinutes();
+
         const formattedDay = day < 10 ? `0${day}` : day;
         const formattedMonth = month < 10 ? `0${month}` : month;
 
         // returning the whole combined date
-        return `${formattedDay}/${formattedMonth}/${year}`;
+        return `${formattedDay}/${formattedMonth}/${year} ${hour}:${minute}`;
     };
 
     return (
@@ -68,7 +71,7 @@ const PaymentHistory = () => {
                                     {payment.transactionId}
                                 </td>
                                 <td>
-                                    {formatDate(payment.date)} (DD/MM/YYYY)
+                                    {formatDate(payment.date)} (DD/MM/YYYY  HH:MM)
                                 </td>
                             </tr>
                             )

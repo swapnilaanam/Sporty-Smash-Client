@@ -144,7 +144,7 @@ const CheckoutForm = ({ classInfo, price, selectedClassId }) => {
     };
 
     return (
-        <div className="w-1/3 mx-auto checkoutform">
+        <div className="w-[500px] mx-auto checkoutform">
             <form onSubmit={handleSubmit}>
                 <CardElement
                     options={{
