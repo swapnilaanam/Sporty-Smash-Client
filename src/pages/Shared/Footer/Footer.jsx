@@ -8,7 +8,7 @@ const Footer = () => {
             <div className="footer footer-center flex flex-col lg:flex-row justify-around items-center py-12 px-16 bg-base-300 text-base-content rounded gap-16 lg:gap-8 border-t-2 shadow-sm">
                 <div className="space-y-3">
                     <div className="flex flex-col items-center justify-center space-y-3">
-                        <div className="flex text-2xl text-green-500">
+                        <div className="flex text-2xl text-green-600">
                             <span className="ml-2 font-bold">Sporty Smash</span>
                         </div>
                         <p className="text-base font-medium">Address: Anondo, Uttara, Dhaka.</p>

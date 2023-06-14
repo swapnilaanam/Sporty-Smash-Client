@@ -6,9 +6,9 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import slider1 from "../../../assets/images/slider-1.jpg";
-import slider2 from "../../../assets/images/slider-3.jpg";
-import slider3 from "../../../assets/images/slider-2.jpg";
+import slider1 from "../../../assets/images/slider-1-comp.jpg";
+import slider2 from "../../../assets/images/slider-3-comp.jpg";
+import slider3 from "../../../assets/images/slider-2-comp.jpg";
 
 import './TopSlider.css';
 import { Link } from "react-router-dom";
