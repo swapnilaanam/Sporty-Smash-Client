@@ -30,16 +30,17 @@ const SocialLogin = () => {
                     .then(data => {
                         // console.log(data);
                         if (data.insertedId) {
-                            Swal.fire({
-                                title: 'User SignedIn successfully...',
-                                showClass: {
-                                    popup: 'animate__animated animate__fadeInDown'
-                                },
-                                hideClass: {
-                                    popup: 'animate__animated animate__fadeOutUp'
-                                }
-                            })
+                            console.log('user saved to the data base...');
                         }
+                        Swal.fire({
+                            title: 'User SignedIn successfully...',
+                            showClass: {
+                                popup: 'animate__animated animate__fadeInDown'
+                            },
+                            hideClass: {
+                                popup: 'animate__animated animate__fadeOutUp'
+                            }
+                        })
                         navigate(from, { replace: true });
                     })
             })
