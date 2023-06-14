@@ -14,7 +14,7 @@ const SingleClass = ({ singleClass }) => {
     const [isInstructor, setIsInstructor] = useState(false);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users/admin/${user?.email}`, {
+        fetch(`https://summer-camp-school-server-lime.vercel.app/users/admin/${user?.email}`, {
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('access-token')}`
             }
@@ -22,7 +22,7 @@ const SingleClass = ({ singleClass }) => {
             .then(res => res.json())
             .then(data => setIsAdmin(data.admin));
 
-        fetch(`http://localhost:5000/users/instructor/${user?.email}`, {
+        fetch(`https://summer-camp-school-server-lime.vercel.app/users/instructor/${user?.email}`, {
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('access-token')}`
             }

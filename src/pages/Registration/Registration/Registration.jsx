@@ -32,7 +32,7 @@ const Registration = () => {
                         .then(() => {
                             const savedUser = { name: data.name, email: data.email, role: 'student', profile: data.photo };
                             // console.log(savedUser);
-                            fetch('http://localhost:5000/users', {
+                            fetch('https://summer-camp-school-server-lime.vercel.app/users', {
                                 method: 'POST',
                                 headers: {
                                     'content-type': 'application/json'

@@ -43,7 +43,7 @@ const AuthProvider = ({ children }) => {
             console.log('current user', currentUser);
 
             if (currentUser) {
-                axios.post('http://localhost:5000/jwt', {
+                axios.post('https://summer-camp-school-server-lime.vercel.app/jwt', {
                     email: currentUser.email
                 })
                     .then(res => {

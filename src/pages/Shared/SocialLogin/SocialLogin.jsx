@@ -19,7 +19,7 @@ const SocialLogin = () => {
 
                 const savedUser = { name: loggedUser.displayName, email: loggedUser.email, role: 'student', profile: loggedUser.photoURL };
 
-                fetch('http://localhost:5000/users', {
+                fetch('https://summer-camp-school-server-lime.vercel.app/users', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

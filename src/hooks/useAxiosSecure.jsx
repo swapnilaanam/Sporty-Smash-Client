@@ -9,7 +9,7 @@ const useAxiosSecure = () => {
 
     // an axios instance with base url
     const axiosSecure = axios.create({
-        baseURL: 'http://localhost:5000'
+        baseURL: 'https://summer-camp-school-server-lime.vercel.app'
     });
 
     useEffect(() => {

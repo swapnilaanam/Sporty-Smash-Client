@@ -1,40 +1,9 @@
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import ActiveLink from '../ActiveLink/ActiveLink';
-import { useEffect, useState } from 'react';
 
 const NavBar = () => {
     const { user, logOut } = useAuth();
-
-    const [isAdmin, setIsAdmin] = useState(false);
-    const [isInstructor, setIsInstructor] = useState(false);
-    const [isStudent, setIsStudent] = useState(false);
-
-    useEffect(() => {
-        fetch(`http://localhost:5000/users/admin/${user?.email}`, {
-            headers: {
-                'authorization': `Bearer ${localStorage.getItem('access-token')}`
-            }
-        })
-            .then(res => res.json())
-            .then(data => setIsAdmin(data.admin));
-
-        fetch(`http://localhost:5000/users/instructor/${user?.email}`, {
-            headers: {
-                'authorization': `Bearer ${localStorage.getItem('access-token')}`
-            }
-        })
-            .then(res => res.json())
-            .then(data => setIsInstructor(data.instructor));
-
-        fetch(`http://localhost:5000/users/student/${user?.email}`, {
-            headers: {
-                'authorization': `Bearer ${localStorage.getItem('access-token')}`
-            }
-        })
-            .then(res => res.json())
-            .then(data => setIsStudent(data.student));
-    }, [user]);
 
     const handleLogOut = () => {
         logOut()
@@ -48,15 +17,7 @@ const NavBar = () => {
         <li><ActiveLink to="/classes">Classes</ActiveLink></li>
         {
             user ? <>
-                {
-                    isAdmin && <li><Link to="/dashboard/manageclasses" className="text-xl font-medium hover:bg-transparent">Dashboard</Link></li>
-                }
-                {
-                    isInstructor && <li><Link to="/dashboard/myclasses" className="text-xl font-medium hover:bg-transparent">Dashboard</Link></li>
-                }
-                {
-                    isStudent && <li><Link to="/dashboard/myselectedclasses" className="text-xl font-medium hover:bg-transparent">Dashboard</Link></li>
-                }
+                <li><ActiveLink to="/dashboard">Dashboard</ActiveLink></li>
                 <li>
                     <div className="avatar">
                         <div className="w-10 rounded-full">
