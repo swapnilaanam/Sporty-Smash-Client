@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import ActiveLink from '../ActiveLink/ActiveLink';
+import { HashLink } from 'react-router-hash-link';
 
 const NavBar = () => {
     const { user, logOut } = useAuth();
@@ -13,6 +14,8 @@ const NavBar = () => {
 
     const navItems = <>
         <li><ActiveLink to="/">Home</ActiveLink></li>
+        <li><HashLink to="/#feature" className="text-xl font-semibold hover:bg-transparent">Features</HashLink></li>
+        <li><HashLink to="/#blogs" className="text-xl font-semibold hover:bg-transparent">Blogs</HashLink></li>
         <li><ActiveLink to="/instructors">Instructors</ActiveLink></li>
         <li><ActiveLink to="/classes">Classes</ActiveLink></li>
         {
@@ -45,9 +48,9 @@ const NavBar = () => {
     </>;
 
     return (
-        <div className="navbar items-center bg-green-500 text-white py-3 border-b-2 shadow-sm">
+        <div className="navbar items-center bg-green-500 text-white py-2 shadow-sm">
             <div className="navbar-start items-center">
-                <Link to="/" className="btn btn-ghost normal-case text-3xl font-bold text-white hover:bg-transparent">
+                <Link to="/" className="btn btn-ghost normal-case text-2xl font-bold text-white hover:bg-transparent">
                     <span className="ml-2">Sporty Smash</span>
                 </Link>
             </div>

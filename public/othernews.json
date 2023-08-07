@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "image": "../src/assets/images/tennis-news-min.jpg",
+        "heading": "Tennis Continues to Thrive as a Global Sport",
+        "short": "Tennis maintains its position as a...",
+        "description": "Tennis maintains its position as a thriving and popular global sport, captivating fans of all ages and backgrounds. From grand slam tournaments to local club matches, tennis offers a diverse range of competitive and recreational opportunities. The sport's appeal lies in its blend of athleticism, strategy, and individual prowess, making every match a compelling spectacle. With legendary players continuing to inspire new generations, tennis has a bright future, and its global reach continues to expand. As enthusiasts eagerly follow their favorite players' journeys and local talents emerge on the international stage, tennis remains an enduring symbol of passion and excellence in the world of sports."
+    },
+    {
+        "id": 2,
+        "image": "../src/assets/images/swimming-news-min.jpg",
+        "heading": "Swimming Safety Takes Center Stage",
+        "short": "Amidst growing concerns about water safety...",
+        "description": "Amidst growing concerns about water safety, the focus on swimming safety has intensified, prompting initiatives to educate and equip swimmers with essential knowledge and skills. Swimming-related incidents have raised awareness about the need for proper training, supervision, and awareness of potential risks. Swimming schools and organizations have stepped up efforts to promote water safety, offering swimming lessons and lifeguard training to communities worldwide. Additionally, technology-driven advancements in aquatic safety equipment are being embraced to enhance water rescue capabilities. As the importance of swimming safety gains prominence, collaborations between governing bodies, schools, and local communities aim to create safer aquatic environments for everyone, reinforcing the joy of swimming with peace of mind."
+    }
+]

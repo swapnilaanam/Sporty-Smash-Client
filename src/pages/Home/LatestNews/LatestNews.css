@@ -1,0 +1,24 @@
+.react-tabs {
+    border-bottom: none;
+    border: 0;
+}
+
+.react-tabs__tab-list {
+    border-bottom: none;
+    border: 0;
+}
+
+.react-tabs__tab {
+    border: none;
+    border-radius: 0;
+    margin: 0 4px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-bottom: none !important;
+    border-bottom: 0 !important;
+}
+
+.react-tabs__tab--selected {
+    background-color: darkorange !important;
+    color: white;
+}

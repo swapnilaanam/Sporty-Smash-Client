@@ -19,6 +19,7 @@ import PaymentHistory from "../pages/Dashboard/PaymentHistory/PaymentHistory";
 import MyEnrolledClasses from "../pages/Dashboard/MyEnrolledClasses/MyEnrolledClasses";
 import StudentRoute from "./StudentRoute";
 import NotFound from "../pages/NotFound/NotFound";
+import SingleNews from "../pages/SingleNews/SingleNews";
 
 export const router = createBrowserRouter([
     {
@@ -36,6 +37,10 @@ export const router = createBrowserRouter([
             {
                 path: '/classes',
                 element: <Classes></Classes>
+            },
+            {
+                path: '/blogs/:id',
+                element: <SingleNews></SingleNews>
             },
             {
                 path: '/login',

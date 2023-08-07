@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "image": "https://i.ibb.co/bKdRW1h/cricket-news-1-min.jpg",
+        "heading": "Benefits of playing cricket",
+        "short": "Playing cricket comes with a myriad of benefits...",
+        "description": "Playing cricket comes with a myriad of benefits for individuals. The sport improves physical fitness through running, fielding, and throwing, enhancing cardiovascular endurance and strength. Cricket fosters hand-eye coordination, teamwork, and leadership skills, as players work together to achieve shared objectives. Moreover, it cultivates focus, strategic thinking, and problem-solving abilities during matches, bolstering mental acuity. Beyond the game, cricket nurtures discipline, responsibility, and emotional resilience in players. Additionally, it offers social interactions, cultural exposure, and stress relief, contributing to overall well-being. Engaging in cricket provides a sense of accomplishment, building self-confidence and promoting a healthy, active lifestyle. In sum, cricket's holistic nature nurtures both physical and mental growth, making it a rewarding sport for individuals of all ages."
+    },
+    {
+        "id": 2,
+        "image": "https://i.ibb.co/VQS7Vt2/cricket-news-2-min.jpg",
+        "heading": "DRS - A Game-Changer in Cricket Decisions",
+        "short": "The Decision Review System (DRS) has emerged...",
+        "description": "The Decision Review System (DRS) has emerged as a game-changing technology in cricket, impacting crucial match decisions. DRS allows players to challenge on-field umpire decisions through a limited number of reviews. The system employs ball-tracking technology and UltraEdge to provide more accurate outcomes on contentious decisions, including LBW calls and edges. Since its introduction, DRS has added an element of drama and fairness to the game, reducing human error and generating intense discussions among players, fans, and pundits. As cricket continues to evolve, DRS remains a valuable tool, ensuring greater precision and transparency in umpiring decisions and enriching the excitement of the sport."
+    }
+]

@@ -3,7 +3,7 @@ import './ActiveLink.css';
 
 const ActiveLink = ({ children, to }) => {
     return (
-        <NavLink to={to} className={({ isActive }) => isActive ? "active text-black" : "text-xl font-medium hover:bg-transparent"}>
+        <NavLink to={to} className={({ isActive }) => isActive ? "active text-xl font-semibold" : "text-xl font-semibold hover:bg-transparent"}>
             {children}
         </NavLink>
     );

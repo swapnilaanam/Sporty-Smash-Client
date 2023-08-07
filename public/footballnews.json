@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "image": "https://i.ibb.co/LpQ0zGJ/football-news-1-min.jpg",
+        "heading": "All things you want to know about cricket",
+        "short": "Football is a global sport played with...",
+        "description": "Football is a global sport played with two teams of 11 players each. The objective is to score goals by getting the ball into the opposing team's net without using hands. Matches last for 90 minutes, divided into two halves. Offside rules apply to maintain fair play. Famous players like Pelé, Maradona, and Messi have left a lasting impact. The FIFA World Cup is the most prestigious international tournament. Referees enforce rules, and penalties are given for fouls. Football's popularity and passion span the globe."
+    },
+    {
+        "id": 2,
+        "image": "https://i.ibb.co/DYJj9qp/football-news-2-min.jpg",
+        "heading": "The rules of penalty kick",
+        "short": "In football, a penalty kick is a critical moment...",
+        "description": "In football, a penalty kick is a critical moment that can sway the fate of a match. When a defensive foul occurs inside the penalty area, the attacking team is awarded a chance to take a shot on goal from the penalty spot, located 12 yards away from the net. Only one player, usually the one fouled, is permitted to take the kick. The goalkeeper must stay on the goal line until the ball is kicked, while other players must remain outside the penalty area and arc. Once the referee signals for the kick, the ball is in play as soon as it's struck, and if the ball crosses the goal line between the posts and under the crossbar, a goal is scored. Penalty kicks demand nerves of steel from the penalty taker, and the outcome can be influenced by the goalkeeper's anticipation and quick reflexes. These high-pressure moments often leave fans holding their breath and have the potential to become iconic highlights in the history of the sport."
+    },
+    {
+        "id": 3,
+        "image": "https://i.ibb.co/Z8D23cK/footaball-news-3-min.jpg",
+        "heading": "The rules of penalty kick",
+        "short": "In football, a penalty kick is a critical moment...",
+        "description": "In football, a penalty kick is a critical moment that can sway the fate of a match. When a defensive foul occurs inside the penalty area, the attacking team is awarded a chance to take a shot on goal from the penalty spot, located 12 yards away from the net. Only one player, usually the one fouled, is permitted to take the kick. The goalkeeper must stay on the goal line until the ball is kicked, while other players must remain outside the penalty area and arc. Once the referee signals for the kick, the ball is in play as soon as it's struck, and if the ball crosses the goal line between the posts and under the crossbar, a goal is scored. Penalty kicks demand nerves of steel from the penalty taker, and the outcome can be influenced by the goalkeeper's anticipation and quick reflexes. These high-pressure moments often leave fans holding their breath and have the potential to become iconic highlights in the history of the sport."
+    },
+    {
+        "id": 4,
+        "image": "https://i.ibb.co/1sdmXVY/football-news-4-min.jpg",
+        "heading": "Benefits of playing football for children",
+        "short": "Playing football offers numerous benefits for children's...",
+        "description": "Playing football offers numerous benefits for children's physical, mental, and social development. It promotes physical fitness, improving cardiovascular health and motor skills. Teamwork and cooperation are fostered, teaching essential communication and social skills. Football builds discipline, focus, and problem-solving abilities, boosting confidence and self-esteem. Social interaction with peers enhances emotional well-being, while time management skills are honed through balancing school and practice. Additionally, the global nature of football exposes children to different cultures, fostering cultural awareness and unity. Overall, football provides a fun and enriching experience that positively impacts children's growth and well-being."
+    }
+]

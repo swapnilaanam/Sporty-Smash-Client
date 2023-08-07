@@ -16,7 +16,7 @@ const Classes = () => {
 
     return (
         <div className="bg-emerald-50">
-            <div className="hero min-h-[400px] bg-[url('https://i.ibb.co/NjFr8XV/kids-sportswear-jumping-outdoors.jpg')] bg-center" style={{ backgroundPosition: 'center 30%' }}>
+            <div className="hero min-h-[400px] bg-[url('https://i.ibb.co/d470x8z/class-back-min.jpg')] bg-center" style={{ backgroundPosition: 'center 30%' }}>
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="hero-content text-center text-neutral-content">
                     <div className="max-w-lg">

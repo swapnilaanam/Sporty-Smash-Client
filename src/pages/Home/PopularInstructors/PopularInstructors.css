@@ -1,0 +1,25 @@
+.instructor-body {
+    position: absolute;
+    left: 0;
+    right: 0;
+    transform: translateY(255px);
+    transition: all 0.5s ease-in-out;
+}
+
+/* .instructor-container {
+    transition: all 5s ease-in-out;
+} */
+
+.instructor-container:hover .instructor-body {
+    transform: translateY(155px);
+}
+
+@media only screen and (max-width: 576px) {
+    .instructor-body {
+        transform: translateY(260px);
+    }
+
+    .instructor-container:hover .instructor-body {
+        transform: translateY(165px);
+    }
+}
