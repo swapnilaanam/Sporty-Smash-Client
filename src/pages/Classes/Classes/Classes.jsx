@@ -15,7 +15,7 @@ const Classes = () => {
     useTitle('Classes')
 
     return (
-        <div className="bg-emerald-50">
+        <div className="bg-emerald-50 pt-16 md:pt-[96px]">
             <div className="hero min-h-[400px] bg-[url('https://i.ibb.co/d470x8z/class-back-min.jpg')] bg-center" style={{ backgroundPosition: 'center 30%' }}>
                 <div className="hero-overlay bg-opacity-60"></div>
                 <div className="hero-content text-center text-neutral-content">

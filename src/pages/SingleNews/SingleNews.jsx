@@ -10,8 +10,8 @@ const SingleNews = () => {
                 <img src={image} alt="news image" className="w-full h-[350px] object-cover" />
             </div>
             <div className="pt-20 pb-40">
-                <h2 className="text-center font-semibold text-3xl mb-12">{heading}</h2>
-                <p className="text-center font-medium text-base leading-relaxed mx-28">{description}</p>
+                <h2 className="text-center font-semibold text-3xl px-4 mb-12 capitalize">{heading}</h2>
+                <p className="text-center font-medium text-base leading-relaxed px-6 md:mx-28">{description}</p>
             </div>
         </div>
     );

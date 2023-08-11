@@ -20,8 +20,8 @@ const PopularClasses = () => {
 
     return (
         <div className="pt-28 pb-36 bg-yellow-100">
-            <div className="max-w-7xl mx-auto">
-                <div className="mb-16 flex flex-col md:flex-row justify-center md:justify-between items-center">
+            <div className="max-w-7xl mx-auto overflow-x-hidden">
+                <div className="mb-20 flex flex-col md:flex-row justify-center md:justify-between items-center">
                     <h2 className="text-neutral text-3xl font-semibold leading-snug tracking-wide">
                         Our Popular
                         <span className="">
@@ -40,7 +40,7 @@ const PopularClasses = () => {
                         </h4>
                     </Link>
                 </div>
-                <div className="flex flex-col lg:flex-row justify-center items-center flex-wrap gap-14 overflow-hidden">
+                <div className="flex flex-col lg:flex-row justify-center items-center flex-wrap gap-14 pb-10 md:overflow-x-hidden">
                     {
                         popularClasses.map(popularClass => <motion.div
                             key={popularClass._id}

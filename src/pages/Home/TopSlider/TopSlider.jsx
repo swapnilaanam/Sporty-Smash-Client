@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 
 const TopSlider = () => {
     return (
-        <>
+        <div className="pt-16 md:pt-[96px]">
             <Swiper
                 slidesPerView={1}
                 spaceBetween={30}
@@ -88,7 +88,7 @@ const TopSlider = () => {
                     </div>
                 </SwiperSlide>
             </Swiper>
-        </>
+        </div>
     );
 };
 

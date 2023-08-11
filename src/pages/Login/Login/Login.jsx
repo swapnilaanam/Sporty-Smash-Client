@@ -48,10 +48,10 @@ const Login = () => {
     }
 
     return (
-        <div className="bg-green-50">
+        <div className="bg-green-50 px-4">
             <div className="max-w-5xl mx-auto py-24">
-                <div className="w-full flex flex-col lg:flex-row gap-8 bg-white justify-center items-center p-12 shadow-xl rounded-md">
-                    <form onSubmit={handleSubmit(onSubmit)} className="w-1/2 space-y-2">
+                <div className="w-full flex flex-col md:flex-row gap-8 bg-white justify-center items-center p-12 shadow-xl rounded-md">
+                    <form onSubmit={handleSubmit(onSubmit)} className="w-full md:w-1/2 space-y-2">
                         <h3 className="text-center text-3xl font-semibold">Login!</h3>
                         <div className="form-control w-full">
                             <label className="label">
@@ -83,7 +83,7 @@ const Login = () => {
                             <Link to="/register" className="text-blue-500 font-medium ms-2">Register.</Link>
                         </p>
                     </form>
-                    <div className="w-1/2 border-t-4 lg:border-l-4 lg:border-t-0">
+                    <div className="w-full md:w-1/2 border-t-4 lg:border-l-4 lg:border-t-0">
                         <img src={loginImg} alt="Login Image" />
                     </div>
                 </div>

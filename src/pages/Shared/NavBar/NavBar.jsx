@@ -48,7 +48,7 @@ const NavBar = () => {
     </>;
 
     return (
-        <div className="navbar items-center bg-green-500 text-white py-2 shadow-sm">
+        <div className="fixed z-40 navbar items-center bg-green-500 text-white py-2 shadow-sm">
             <div className="navbar-start items-center">
                 <Link to="/" className="btn btn-ghost normal-case text-2xl font-bold text-white hover:bg-transparent">
                     <span className="ml-2">Sporty Smash</span>
