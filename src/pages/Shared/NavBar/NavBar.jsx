@@ -14,10 +14,9 @@ const NavBar = () => {
 
     const navItems = <>
         <li><ActiveLink to="/">Home</ActiveLink></li>
-        <li><HashLink to="/#feature" className="text-xl font-semibold hover:bg-transparent">Features</HashLink></li>
-        <li><HashLink to="/#blogs" className="text-xl font-semibold hover:bg-transparent">Blogs</HashLink></li>
         <li><ActiveLink to="/instructors">Instructors</ActiveLink></li>
         <li><ActiveLink to="/classes">Classes</ActiveLink></li>
+        <li><HashLink to="/#blogs" className="text-xl font-semibold hover:bg-transparent">Blogs</HashLink></li>
         {
             user ? <>
                 <li><ActiveLink to="/dashboard">Dashboard</ActiveLink></li>

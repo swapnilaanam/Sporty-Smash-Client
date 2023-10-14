@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const VideoBanner = () => {
     return (
-        <div className="px-4 lg:px-0 relative">
+        <div className="relative">
             <video className="w-full h-[500px] object-cover" autoPlay={true} muted={true} loop={true} controls={false}>
                 <source src={videoBanner} type="video/mp4"></source>
             </video>
