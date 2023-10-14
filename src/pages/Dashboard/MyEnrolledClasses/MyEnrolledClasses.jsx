@@ -18,9 +18,9 @@ const MyEnrolledClasses = () => {
     useTitle('My Enrolled Classes');
 
     return (
-        <div className="w-full px-10 h-full">
+        <div className="w-full px-4 md:px-10 h-full">
             <h2 className="text-black text-3xl font-medium text-center my-12">My Selected Classes</h2>
-            <div className="overflow-x-auto mb-10">
+            <div className="w-64 md:w-full overflow-x-auto mb-10">
                 <table className="table text-center border-2 table-zebra">
                     <thead className="bg-stone-400 text-black text-base">
                         <tr>

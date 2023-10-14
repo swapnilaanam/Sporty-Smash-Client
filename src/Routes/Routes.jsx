@@ -3,7 +3,6 @@ import Main from "../Layouts/Main";
 import Home from "../pages/Home/Home/Home";
 import Login from "../pages/Login/Login/Login";
 import Registration from "../pages/Registration/Registration/Registration";
-import Dashboard from "../Layouts/Dashboard";
 import ManageUsers from "../pages/Dashboard/ManageUsers/ManageUsers";
 import PrivateRoute from "./PrivateRoute";
 import AdminRoute from "./AdminRoute";
@@ -20,6 +19,8 @@ import MyEnrolledClasses from "../pages/Dashboard/MyEnrolledClasses/MyEnrolledCl
 import StudentRoute from "./StudentRoute";
 import NotFound from "../pages/NotFound/NotFound";
 import SingleNews from "../pages/SingleNews/SingleNews";
+import DashboardLayout from "../Layouts/Dashboard";
+import Dashboard from "../pages/Dashboard/Dashboard/Dashboard";
 
 export const router = createBrowserRouter([
     {
@@ -54,8 +55,12 @@ export const router = createBrowserRouter([
     },
     {
         path: 'dashboard',
-        element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+        element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
         children: [
+            {
+                path: '',
+                element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>
+            },
             {
                 path: 'manageclasses',
                 element: <AdminRoute><ManageClasses></ManageClasses></AdminRoute>

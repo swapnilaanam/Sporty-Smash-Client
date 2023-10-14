@@ -56,7 +56,7 @@ const AddClass = () => {
     }
 
     return (
-        <div className="w-full px-10 h-full bg-emerald-50">
+        <div className="w-full px-4 md:px-10 h-full bg-emerald-50">
             <h2 className="text-black text-3xl font-medium text-center my-10">Add A Class</h2>
             <div className="max-w-4xl mx-auto shadow-lg rounded-sm border-black p-12 mb-24 bg-base-100">
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-2">
@@ -67,14 +67,14 @@ const AddClass = () => {
                         <input type="text" {...register("className", { required: true })} placeholder="Enter your class name" className="input input-bordered input-info w-full" />
                         {errors.className && <p className="mt-2 text-red-600">Class Name Field Is Required!</p>}
                     </div>
-                    <div className="form-control w-full">
+                    <div className="form-control w-full pt-3 md:pt-0">
                         <label className="label">
-                            <span className="label-text">Class Image: </span>
+                            <span className="label-text text-lg">Class Image: </span>
                         </label>
                         <input type="file" {...register("classImage", { required: true })} className="file-input file-input-bordered w-full" />
                         {errors.classImage && <p className="mt-2 text-red-600">Class Image Is Required!</p>}
                     </div>
-                    <div className="flex gap-10">
+                    <div className="flex flex-col md:flex-row gap-4 md:gap-10 pt-4 md:pt-0">
                         <div className="form-control w-full">
                             <label className="label">
                                 <span className="label-text text-lg">Instructor Name: </span>
@@ -90,7 +90,7 @@ const AddClass = () => {
                             {/* {errors.instructorEmail && <p className="mt-2 text-red-600">Instructor Email Field Is Required!</p>} */}
                         </div>
                     </div>
-                    <div className="flex gap-10">
+                    <div className="flex flex-col md:flex-row gap-3 md:gap-10 pt-4 md:pt-0">
                         <div className="form-control w-full">
                             <label className="label">
                                 <span className="label-text text-lg">Available Seats: </span>

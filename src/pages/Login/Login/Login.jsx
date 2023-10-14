@@ -48,7 +48,7 @@ const Login = () => {
     }
 
     return (
-        <div className="bg-green-50 px-4">
+        <div className="bg-green-50 px-4 pt-16 md:pt-[96px]">
             <div className="max-w-5xl mx-auto py-24">
                 <div className="w-full flex flex-col md:flex-row gap-8 bg-white justify-center items-center p-12 shadow-xl rounded-md">
                     <form onSubmit={handleSubmit(onSubmit)} className="w-full md:w-1/2 space-y-2">

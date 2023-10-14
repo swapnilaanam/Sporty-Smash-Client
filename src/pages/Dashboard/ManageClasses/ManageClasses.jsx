@@ -109,7 +109,7 @@ const ManageClasses = () => {
     return (
         <div className="w-full px-4 h-full">
             <h2 className="text-black text-3xl font-medium text-center my-12">Manage Classes</h2>
-            <div className="overflow-x-auto mb-10">
+            <div className="w-64 md:w-full overflow-x-auto mb-10">
                 <table className="table table-xs text-center border-2 table-zebra">
                     <thead className="bg-stone-400 text-black text-base">
                         <tr>
@@ -161,14 +161,14 @@ const ManageClasses = () => {
                                 </td>
                                 <th>
                                     <div className="flex gap-3">
-                                        <button onClick={() => handleApprove(singleClass)} className="btn btn-success  btn-xs" disabled={singleClass.status !== 'pending'}>
+                                        <button onClick={() => handleApprove(singleClass)} className="btn btn-success btn-xs" disabled={singleClass.status !== 'pending'}>
                                             Approve
                                         </button>
                                         <button onClick={() => handleDeny(singleClass)} className="btn bg-red-600 hover:bg-red-600 text-white hover:text-white btn-xs" disabled={singleClass.status !== 'pending'}>
                                             Deny
                                         </button>
 
-                                        <label htmlFor={`my_modal_${index + 1}`} className="btn btn-warning btn-xs" disabled={singleClass.status === 'pending'}>Send Feedback</label>
+                                        <label htmlFor={`my_modal_${index + 1}`} className="btn btn-warning btn-xs" disabled={singleClass.status === 'pending'}>Feedback</label>
 
                                         <input type="checkbox" id={`my_modal_${index + 1}`} className="modal-toggle" />
                                         <div className="modal">

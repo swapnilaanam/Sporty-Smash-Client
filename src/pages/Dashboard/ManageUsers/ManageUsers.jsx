@@ -57,10 +57,10 @@ const ManageUsers = () => {
     }
 
     return (
-        <div className="w-full px-10 h-full">
+        <div className="w-full px-4 md:px-10 h-full">
             <h2 className="text-black text-3xl font-medium text-center my-12">Manage Users</h2>
-            <div className="overflow-x-auto mb-10">
-                <table className="table text-center border-2 table-zebra">
+            <div className="w-64 md:w-full overflow-x-auto mb-10">
+                <table className="table table-xs text-center border-2 table-zebra">
                     <thead className="bg-stone-400 text-black text-base">
                         <tr>
                             <th>
@@ -99,10 +99,10 @@ const ManageUsers = () => {
                                 </td>
                                 <th>
                                     <div className="flex gap-5">
-                                        <button onClick={() => handleMakeInstructor(user)} disabled={user.role === 'instructor'} className="btn btn-warning btn-sm">
+                                        <button onClick={() => handleMakeInstructor(user)} disabled={user.role === 'instructor'} className="btn btn-warning btn-xs">
                                             Make Instructor
                                         </button>
-                                        <button onClick={() => handleMakeAdmin(user)} disabled={user.role === 'admin'} className="btn btn-success btn-sm">
+                                        <button onClick={() => handleMakeAdmin(user)} disabled={user.role === 'admin'} className="btn btn-success btn-xs">
                                             Make Admin
                                         </button>
                                     </div>

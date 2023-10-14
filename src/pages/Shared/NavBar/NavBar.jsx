@@ -49,12 +49,12 @@ const NavBar = () => {
 
     return (
         <div className="fixed z-40 navbar items-center bg-green-500 text-white py-2 shadow-sm">
-            <div className="navbar-start items-center">
-                <Link to="/" className="btn btn-ghost normal-case text-2xl font-bold text-white hover:bg-transparent">
-                    <span className="ml-2">Sporty Smash</span>
+            <div className="navbar-start justify-between items-center w-1/4">
+                <Link to="/" className="ml-2 btn btn-ghost normal-case text-2xl font-bold text-white hover:bg-transparent">
+                    Sporty Smash
                 </Link>
             </div>
-            <div className="navbar-end">
+            <div className="w-3/4 justify-end">
                 <div className="dropdown z-10">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
